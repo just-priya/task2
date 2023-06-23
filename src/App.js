@@ -47,8 +47,8 @@ const App = () => {
       bp: "120/80",
       respirationRate: "18",
       value: "joe",
-      heartRate: "70",
-      pulse: "50",
+      heartRate: "200",
+      pulse: "150",
     },
     {
       id: 5,
@@ -56,7 +56,7 @@ const App = () => {
       dob: "4/05/2000",
       gender: "female",
       bp: "170/80",
-      respirationRate: "22",
+      respirationRate: "20",
       value: "pradeepa",
       heartRate: "70",
       pulse: "50",
@@ -109,26 +109,57 @@ const App = () => {
           {!selected ? (
             <div>
               {selected.map((e) => (
-                <>
-                  <label>Patient Name:{e.label}</label>
-                  <br></br>
-                  <label>DOB:{e.dob}</label>
-                  <br></br>
-                  <label>Gender:{e.gender}</label>
-                  <br></br>
-                  {e.bp >= "120/80" ? (
-                    <label style={{ backgroundColor: "yellow", width: "25%" }}>
-                      BP:{e.bp}
-                    </label>
-                  ) : (
-                    <>
-                      <label>BP:{e.bp}</label>
-                      <br></br>
-                    </>
-                  )}
+                 <>
+                 <label>Patient Name:{e.label}</label>
+                 <br></br>
+                 <label>DOB:{e.dob}</label>
+                 <br></br>
+                 <label>Gender:{e.gender}</label>
+                 <br></br>
+                 {e.respirationRate > 100 ? (
+                   <label style={{ backgroundColor: "red" }}>
+                     Respiration Rate:{e.respirationRate}
+                   </label>
+                 ) : (
+                   <label>Respiration Rate:{e.respirationRate}</label>
+                 )}
+                 <br></br>
+                 {e.heartRate > 100 ? (
+                   <label style={{ backgroundColor: "red" }}>
+                     Heart Rate:{e.heartRate}
+                   </label>
+                 ) : (
+                   <label>Heart Rate:{e.heartRate}</label>
+                 )}
 
-                  <hr></hr>
-                </>
+                 <br></br>
+       
+                 {e.pulse > 100 ? (
+                   <label style={{ backgroundColor: "orange" }}>
+                     Pulse{e.pulse}
+                   </label>
+                 ) : (
+                   <label>Heart Rate:{e.heartRate}</label>
+                 )}
+                 <br></br>
+                 {e.bp > "120/80" ? (
+                   <label style={{ backgroundColor: "yellow", width: "25%" }}>
+                     BP:{e.bp}
+                   </label>
+                 ) : (
+                   <>
+                     <label>BP:{e.bp}</label>
+                     <br></br>
+                     <label>Respiration Rate:{e.respirationRate}</label>
+                     <br></br>
+                     <label>Heart Rate:{e.heartRate}</label>
+                     <br></br>
+                     <label>Pulse:{e.pulse}</label>
+                     <br></br>
+                   </>
+                 )}
+                 <hr></hr>
+               </>
               ))}
             </div>
           ) : (
@@ -141,11 +172,31 @@ const App = () => {
                   <br></br>
                   <label>Gender:{e.gender}</label>
                   <br></br>
-                  <label>Respiration Rate:{e.respirationRate}</label>
+                  {e.respirationRate > 100 ? (
+                    <label style={{ backgroundColor: "red" }}>
+                      Respiration Rate:{e.respirationRate}
+                    </label>
+                  ) : (
+                    <label>Respiration Rate:{e.respirationRate}</label>
+                  )}
                   <br></br>
-                  <label>Heart Rate:{e.heartRate}</label>
+                  {e.heartRate > 100 ? (
+                    <label style={{ backgroundColor: "red" }}>
+                      Heart Rate:{e.heartRate}
+                    </label>
+                  ) : (
+                    <label>Heart Rate:{e.heartRate}</label>
+                  )}
+
                   <br></br>
-                  <label>Pulse:{e.pulse}</label>
+        
+                  {e.pulse > 100 ? (
+                    <label style={{ backgroundColor: "orange" }}>
+                      Pulse{e.pulse}
+                    </label>
+                  ) : (
+                    <label>Heart Rate:{e.heartRate}</label>
+                  )}
                   <br></br>
                   {e.bp > "120/80" ? (
                     <label style={{ backgroundColor: "yellow", width: "25%" }}>
@@ -161,7 +212,6 @@ const App = () => {
                       <br></br>
                       <label>Pulse:{e.pulse}</label>
                       <br></br>
-                   
                     </>
                   )}
                   <hr></hr>
