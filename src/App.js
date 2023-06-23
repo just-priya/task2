@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MultiSelect } from "react-multi-select-component";
 
+// const url = "https://jsonplaceholder.typicode.com/posts";
 const App = () => {
   const [selected, setSelected] = useState([]);
 
@@ -73,8 +74,18 @@ const App = () => {
       pulse: "50",
     },
   ]);
+  // const [userData, setUserData] = React.useState([]);
 
-  const numAscending = [...selected].sort((a, b) => (a.id > b.id ? 1 : -1));
+  // const getUserData = async () => {
+  //   const response = await fetch(url);
+  //   const jsonData = await response.json();
+  //   setUserData(jsonData);
+  // };
+
+  // React.useEffect(() => {
+  //   getUserData();
+  // }, []);
+  const numAscending = [...selected].sort((a, b) => (a.id > b.id ? -1 : 1));
 
   const selectChange = (val) => {
     let change = [...val].map((ele) => JSON.stringify(ele));
@@ -109,57 +120,57 @@ const App = () => {
           {!selected ? (
             <div>
               {selected.map((e) => (
-                 <>
-                 <label>Patient Name:{e.label}</label>
-                 <br></br>
-                 <label>DOB:{e.dob}</label>
-                 <br></br>
-                 <label>Gender:{e.gender}</label>
-                 <br></br>
-                 {e.respirationRate > 100 ? (
-                   <label style={{ backgroundColor: "red" }}>
-                     Respiration Rate:{e.respirationRate}
-                   </label>
-                 ) : (
-                   <label>Respiration Rate:{e.respirationRate}</label>
-                 )}
-                 <br></br>
-                 {e.heartRate > 100 ? (
-                   <label style={{ backgroundColor: "red" }}>
-                     Heart Rate:{e.heartRate}
-                   </label>
-                 ) : (
-                   <label>Heart Rate:{e.heartRate}</label>
-                 )}
+                <>
+                  <label>Patient Name:{e.label}</label>
+                  <br></br>
+                  <label>DOB:{e.dob}</label>
+                  <br></br>
+                  <label>Gender:{e.gender}</label>
+                  <br></br>
+                  {e.respirationRate > 100 ? (
+                    <label style={{ backgroundColor: "red" }}>
+                      Respiration Rate:{e.respirationRate}
+                    </label>
+                  ) : (
+                    <label>Respiration Rate:{e.respirationRate}</label>
+                  )}
+                  <br></br>
+                  {e.heartRate > 100 ? (
+                    <label style={{ backgroundColor: "red" }}>
+                      Heart Rate:{e.heartRate}
+                    </label>
+                  ) : (
+                    <label>Heart Rate:{e.heartRate}</label>
+                  )}
 
-                 <br></br>
-       
-                 {e.pulse > 100 ? (
-                   <label style={{ backgroundColor: "orange" }}>
-                     Pulse{e.pulse}
-                   </label>
-                 ) : (
-                   <label>Heart Rate:{e.heartRate}</label>
-                 )}
-                 <br></br>
-                 {e.bp > "120/80" ? (
-                   <label style={{ backgroundColor: "yellow", width: "25%" }}>
-                     BP:{e.bp}
-                   </label>
-                 ) : (
-                   <>
-                     <label>BP:{e.bp}</label>
-                     <br></br>
-                     <label>Respiration Rate:{e.respirationRate}</label>
-                     <br></br>
-                     <label>Heart Rate:{e.heartRate}</label>
-                     <br></br>
-                     <label>Pulse:{e.pulse}</label>
-                     <br></br>
-                   </>
-                 )}
-                 <hr></hr>
-               </>
+                  <br></br>
+
+                  {e.pulse > 100 ? (
+                    <label style={{ backgroundColor: "orange" }}>
+                      Pulse{e.pulse}
+                    </label>
+                  ) : (
+                    <label>Heart Rate:{e.heartRate}</label>
+                  )}
+                  <br></br>
+                  {e.bp > "120/80" ? (
+                    <label style={{ backgroundColor: "yellow", width: "25%" }}>
+                      BP:{e.bp}
+                    </label>
+                  ) : (
+                    <>
+                      <label>BP:{e.bp}</label>
+                      <br></br>
+                      <label>Respiration Rate:{e.respirationRate}</label>
+                      <br></br>
+                      <label>Heart Rate:{e.heartRate}</label>
+                      <br></br>
+                      <label>Pulse:{e.pulse}</label>
+                      <br></br>
+                    </>
+                  )}
+                  <hr></hr>
+                </>
               ))}
             </div>
           ) : (
@@ -189,7 +200,7 @@ const App = () => {
                   )}
 
                   <br></br>
-        
+
                   {e.pulse > 100 ? (
                     <label style={{ backgroundColor: "orange" }}>
                       Pulse{e.pulse}
