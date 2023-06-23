@@ -14,6 +14,8 @@ const App = () => {
       respirationRate: "18",
       heartRate: 70,
       value: "priya",
+      heartRate: "70",
+      pulse: "50",
     },
     {
       id: 2,
@@ -23,6 +25,8 @@ const App = () => {
       bp: "180/80",
       respirationRate: "20",
       value: "kavitha",
+      heartRate: "70",
+      pulse: "50",
     },
     {
       id: 3,
@@ -32,6 +36,8 @@ const App = () => {
       bp: "120/80",
       respirationRate: "17",
       value: "Divya",
+      heartRate: "70",
+      pulse: "50",
     },
     {
       id: 4,
@@ -41,6 +47,8 @@ const App = () => {
       bp: "120/80",
       respirationRate: "18",
       value: "joe",
+      heartRate: "70",
+      pulse: "50",
     },
     {
       id: 5,
@@ -50,6 +58,8 @@ const App = () => {
       bp: "170/80",
       respirationRate: "22",
       value: "pradeepa",
+      heartRate: "70",
+      pulse: "50",
     },
     {
       id: 6,
@@ -59,6 +69,8 @@ const App = () => {
       bp: "120/80",
       respirationRate: "16",
       value: "lavanya",
+      heartRate: "70",
+      pulse: "50",
     },
   ]);
 
@@ -129,6 +141,12 @@ const App = () => {
                   <br></br>
                   <label>Gender:{e.gender}</label>
                   <br></br>
+                  <label>Respiration Rate:{e.respirationRate}</label>
+                  <br></br>
+                  <label>Heart Rate:{e.heartRate}</label>
+                  <br></br>
+                  <label>Pulse:{e.pulse}</label>
+                  <br></br>
                   {e.bp > "120/80" ? (
                     <label style={{ backgroundColor: "yellow", width: "25%" }}>
                       BP:{e.bp}
@@ -137,6 +155,13 @@ const App = () => {
                     <>
                       <label>BP:{e.bp}</label>
                       <br></br>
+                      <label>Respiration Rate:{e.respirationRate}</label>
+                      <br></br>
+                      <label>Heart Rate:{e.heartRate}</label>
+                      <br></br>
+                      <label>Pulse:{e.pulse}</label>
+                      <br></br>
+                   
                     </>
                   )}
                   <hr></hr>
